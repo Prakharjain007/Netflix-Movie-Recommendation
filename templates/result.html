@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Recommendations</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    header {
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    }
+
+    .logo {
+      position: absolute;
+      top: 0;
+      height: 50%;
+      margin: 10px;
+    }
+
+    .container {
+
+      height: 800px;
+      margin: auto;
+      width: 800px;
+      border: #4b1717;
+      border-radius: 20px;
+      color: white;
+      background-image: linear-gradient(to bottom, #421e1e, #b63636);
+      position: absolute;
+      top: 120px;
+      left: 25%;
+
+    }
+
+    table.dataframe,
+    .dataframe th,
+    .dataframe td {
+      border: none;
+      border-bottom: 1px solid #C8C8C8;
+      border-collapse: collapse;
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 40px;
+      font-size: 1em;
+      opacity: 90%;
+    }
+
+    tr:nth-child(odd) {
+      background-color: transparent;
+    }
+
+    tr:nth-child(even) {
+      background-color: transparent;
+    }
+
+    tr:hover {
+      background-color: transparent;
+    }
+
+    .table1{
+      position: absolute;
+      top: 0;
+
+    }
+
+    .table{
+      margin-top: 50px;
+      margin-left: 100px;
+    }
+
+    #first{
+      margin-left:200px;
+      margin-top: 30px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <img class="bod" src="/static/img/01.jpg" alt="">
+  <header>
+    <img class="logo" src="/static/img/logo.png" alt="">
+  </header>
+
+
+  <div class="container">
+
+    <div align="center" class="table1">
+      <h1 id=first align="center">Here are your recommendations....</h1>
+      {% for table in tables %}
+      <h2 id=second>{{titles[loop.index]}}</h2>
+      <div class="table">
+        {{ table|safe }}
+        {% endfor %}
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+  </div>
+</body>
+
+</html>
